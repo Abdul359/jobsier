@@ -1,0 +1,73 @@
+.container.new__blog{
+	padding: 5em 0;
+	position: relative;
+}
+.container
+.title{
+	padding-inline-start: 0.5em;
+	border-left: 5px solid #000;
+	margin-block-end:1em ;
+	font-size: 2em;
+}
+.error{
+	border: 1px solid red;
+	background: #fff;
+	color: red;
+	padding: 1em;
+	width: 100%;
+	text-align: center;
+	font-weight: 600;
+	position: absolute;
+	top: 0;
+}
+
+.form{
+	padding-block: 1em;
+	width:100%;
+	font-size: 1.1em;
+}
+.form__field{
+	width:100%;
+}
+.label {
+	display: block;
+	font-weight: 700;
+	margin-block-end: .5em;
+}
+.input{
+	margin-block-end: .5em;
+	border: 1px solid #777;
+	padding: 0.5em;
+	width:100%;
+	font-size: 1em;
+}
+textarea{
+	width:100%;
+}
+.date{
+	width: 100%;
+}
+.submit{
+	border: 1px solid #000;
+	background: #000;
+	color: #fff;
+	font-size: 1em;
+	padding: 0.5em 1em;
+	transition: all;
+	cursor: pointer;
+	margin-block: 1em;
+}
+.submit:hover,
+.submit:focus{
+	background: #fff;
+	color: #000;
+}
+@media (min-width: 700px){
+	.container{
+		max-width: 900px;
+	}
+.date{
+	width: 40%;
+}
+
+}

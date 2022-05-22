@@ -1,13 +1,51 @@
-body {
+/* ******* resets ******** */
+*, 
+*::after,
+*::before{
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+li{
+  list-style: none;
+}
+image{
+  max-width: 100%;
+}
+
+/* ******* globals ******** */
+.container{
+  width: 95%;
+  margin: 0 auto;
+  margin-block: 5rem;
+}
+@media  (min-width: 700px) {
+.container{
+  margin-block: 6rem;
+  max-width: 1200px;
+}
 }

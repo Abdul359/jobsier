@@ -1,0 +1,29 @@
+.footer{
+	position: sticky;
+	top: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #fff;
+	border: 1px solid #f4f4f4;
+	padding: 2em 4em;
+}
+.footer h1{
+	margin-block-end: 1em;
+	font-weight: 900;
+	font-size: 1.5em;
+}
+.footer p{
+	margin-block-end: 1em;
+	font-size: 1.1em;
+	font-weight: 600;
+}
+@media (min-width: 700px) {
+.footer h1{
+	font-size: 2em;
+}
+	.footer p{
+	font-size: 1.5em;
+	}
+}
