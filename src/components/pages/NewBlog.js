@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router";
+import { addNewBlog, updateBlog } from "../../redux/blogSlice";
 import "../../styles/pages/newBlog.css";
 
-const NewBlog = ({ isNew, id }) => {
+const NewBlog = () => {
+	const { id } = useParams();
+	const dispatch = useDispatch();
 	const [blog, setBlog] = useState({
 		title: "",
 		content: "",
@@ -10,18 +14,18 @@ const NewBlog = ({ isNew, id }) => {
 		image: "",
 	});
 	const { blogs } = useSelector((state) => state.blogs);
+	const navigate = useNavigate();
 	useEffect(() => {
-		if (isNew === false) {
+		if (id) {
 			blogs.forEach((blog) => {
-				if (blog.id === id) {
+				console.log(blog);
+				if (blog.id === parseInt(id)) {
 					setBlog(blog);
-					return;
 				}
 			});
 		}
-	});
+	}, [blogs]);
 	const [error, setError] = useState(null);
-
 	const handleInput = (e) => {
 		const target = e.target;
 		setBlog((previousState) => {
@@ -43,12 +47,31 @@ const NewBlog = ({ isNew, id }) => {
 				return;
 			}
 		});
-		console.log(blog);
+		if (!id) {
+			dispatch(
+				addNewBlog({
+					id: Date.now(),
+					...blog,
+				})
+			);
+			setBlog({
+				title: "",
+				content: "",
+				date: "",
+				image: "",
+			});
+		} else {
+			dispatch(updateBlog(blog));
+			navigate("/");
+		}
 	};
 	return (
 		<section className="container new__blog">
 			{error && <div className="error">{error.message}</div>}
-			<h1 class="title">New Blog</h1>
+			<h1 className="title">
+				{id ? "Update " : "Create "}
+				Blog
+			</h1>
 			<form onSubmit={handleSubmit} className="form">
 				<div className="form__field">
 					<label htmlFor="title" className="label">
@@ -108,7 +131,7 @@ const NewBlog = ({ isNew, id }) => {
 				</div>
 				<div>
 					<button type="submit" className="submit">
-						Create
+						{id ? "Update" : "Create"}
 					</button>
 				</div>
 			</form>

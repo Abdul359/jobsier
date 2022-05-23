@@ -40,11 +40,13 @@ image{
 /* ******* globals ******** */
 .container{
   width: 95%;
+  min-height: 100vh;
   margin: 0 auto;
   margin-block: 5rem;
 }
 @media  (min-width: 700px) {
 .container{
+  min-height: 80vh;
   margin-block: 6rem;
   max-width: 1200px;
 }
