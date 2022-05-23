@@ -24,7 +24,7 @@ const NewBlog = () => {
 				}
 			});
 		}
-	}, [blogs]);
+	}, [blogs, id]);
 	const [error, setError] = useState(null);
 	const handleInput = (e) => {
 		const target = e.target;

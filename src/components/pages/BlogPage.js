@@ -18,7 +18,7 @@ const BlogPage = () => {
 				}
 			});
 		}
-	}, [blogs, blog]);
+	}, [blogs, blog, id]);
 	const handleDeleteBlog = () => {
 		dispatch(deleteBlog(parseInt(id)));
 		navigate("/");
@@ -31,7 +31,7 @@ const BlogPage = () => {
 			{blog ? (
 				<div className="post">
 					<div className="post__image">
-						<img src={blog.image} alt="blog image" />
+						<img src={blog.image} alt={blog.title} />
 					</div>
 					<h1 className="post__title">{blog.title}</h1>
 					<span className="post__date"> Posted on {blog.date} </span>
