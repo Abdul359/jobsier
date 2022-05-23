@@ -10,8 +10,7 @@ const Blog = ({ blog }) => {
 	};
 	return (
 		<div onClick={handleNavigation} className="card blog">
-			{/* <img src={"https://source.unsplash.com/random/"} alt="blog image" /> */}
-			<img src={image} alt="blog image" />
+			<img src={image} alt={title} />
 			<span className="card__date">{date}</span>
 			<h1 className="card__title">{truncateLetters(title, 20)}</h1>
 			<p className="card__content shortend">

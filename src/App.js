@@ -20,6 +20,7 @@ function App() {
 		} else {
 			dispatch(fetchBlogs(JSON.parse(localStorage.getItem("blogs"))));
 		}
+		// eslint-disable-next-line
 	}, []);
 	useEffect(() => {
 		window.scrollTo({
